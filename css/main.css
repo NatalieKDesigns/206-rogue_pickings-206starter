@@ -1,10 +1,10 @@
-@font-face{
-	font-family: 'Wisdom Script';
-	src: url('../fonts/wisdom-script.otf') format('opentype');
-}
 
 html {
 	font-size: 16px;
+}
+@font-face{
+	font-family: 'Wisdom Script';
+	src: url('../fonts/wisdom-script.otf') format('opentype');
 }
 
 body {
@@ -16,44 +16,22 @@ body {
 }
 
 .container{
+	max-width: 1200px;
+	width:90%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	max-width: 480px;
 	margin: 10px;
 	flex-flow: row wrap;
 }
 
-header {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-flow: column;
-}
-
-nav {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	align-content: center;
-}
-
 h1,
+h2,
 h3,
 h4 {
 	color: black;
 	text-transform: uppercase;
 	font-weight: 700;
-	display: flex;
-	justify-content: left;
-	align-items: center;
-}
-
-h3 {
-	font-size: 1.2em;
-}
-h4 {
-	font-size: 1em;
 }
 
 p {
@@ -61,16 +39,22 @@ p {
 	line-height: 21px;
 }
 
-/*The widths are in a percentage!*/
 header {
-	margin: 0 auto;
+	text-align: center;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-flow: row wrap;
 }
 
+/*The widths are in a percentage!*/
+
 header h1 {
-	float: left;
-	font-size: 2em;
+	font-size: 1.875em;
 	margin: 0;
-	padding: 10px 0;
+	padding: 38px 20px 20px 20px;
+	width: 100%;
 	border-bottom: 3px solid #77a466;
 }
 
@@ -79,8 +63,8 @@ header h1 span {
 }
 
 header nav {
-	float: right;
-	padding-top: 20px;
+	padding-top: 20px 0;
+	width: 100%;
 }
 header nav ul {
 	margin: 0;
@@ -89,72 +73,47 @@ header nav ul {
 header nav ul li {
 	text-transform: uppercase;
 	font-weight: 700;
-	font-size: 1em;
-	display: flex;
-	justify-content: center;
+	font-size: .875em;
+	padding: 10px 0;
+	list-style: none;
 }
 header nav ul li a{
 	text-decoration: none;
 	color:#77a466;
-	display: flex;
-	padding-bottom: 20px;
 }
-
 
 /*The widths are in a percentage!*/
 .top-section,
 .bottom-section {
-	margin: 0 auto;
-	clear: both;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-flow: row wrap;
 }
 
-.main-image {
-	height: auto;
-	float: left;
-}
 .main-image img {
 	width: 100%;
 	border-top: 3px solid #77a466;
 	border-bottom: 3px solid #77a466;
 }
 
-.main-title {
-	height: auto;
-	float: left;
-}
 .main-title h3 {
 	text-align: left;
 	padding: 5px 0;
 	color: #77a466;
+	font-size: 1.2em;
 }
 .main-title p {
 	padding: 0;
 	font-size: 1em;
 	line-height: 25px;
 }
-.bottom-section {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	border-bottom: 1px solid #77a466;
-	flex-flow: row wrap;
-	padding-bottom: 10px;
-}
+
 .section-one,
 .section-two,
 .section-three {
-	height: auto;
-	float: left;
 	border-top: 1.5px solid #eee;
-	flex-basis: 350px;
-}
-
-.section-one h4 {
-	padding: 10px 0;
+	width: 100%;
 }
 
 .menu {
@@ -174,23 +133,69 @@ header nav ul li a{
 
 .address {
 	font-size: 1em;
-	line-height: 24px;
+	line-height: 1.5;
 }
 
 /*The widths are in a percentage!*/
 footer {
-	height: 50px;
-	margin: 0 auto;
-	clear: both;
+	border-top: 1.5px solid #eee;
+	width: 100%;
 	text-align: center;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	padding-top: 20px;
+	flex-flow: row wrap;
 }
 footer span {
 	font-family: 'Wisdom Script', cursive;
 	text-transform: lowercase;
 	color: #77a466;
 	font-size: 1.5em;
+}
+
+/* Media Queries for Responsive Design */
+@media only screen and (min-width: 768px) {
+
+		.bottom-section {
+		justify-content: space-between;
+		align-items: flex-start;
+		border-top: 1.5px solid #eee;
+		}
+
+		.section-one,
+		.section-two,
+		.section-three {
+			border-top: none;
+			flex-basis: 30%;
+			}
+
+		.section-two {
+			border-left: 1.5px solid #eee;
+			border-right: 1.5px solid #eee;
+			padding: 0 20px 20px 20px;
+			}
+}
+
+@media only screen and (min-width: 1200px) {
+
+header {
+	justify-content: space-between;
+	padding: 10px 0 20px 0;
+}
+
+header h1 {
+	width: 30%;
+	padding: 0;
+	border-bottom: none;
+	text-align: left;
+}
+
+	header nav {
+		width: 45%;
+	}
+
+	header nav ul {
+		display: flex;
+		justify-content: space-between;
+	}
 }
